@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Button, DatePicker, Space, version } from "antd";
 import "antd/dist/antd.css";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -14,7 +15,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1> teste</h1>
+        <h1>Home</h1>
+        <Link href="/lista">
+          <a>See this anime!</a>
+        </Link>
       </main>
 
       <footer className={styles.footer}>

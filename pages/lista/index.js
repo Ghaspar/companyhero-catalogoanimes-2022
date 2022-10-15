@@ -66,20 +66,20 @@ export default function Lista({animesList}) {
                 id="show-all-animes"
                 col=""
             >
-              <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+              <Row gutter={[12,12]}>
                 {
                   animesList.map((obj) => (
-                    <Col style={col}>
-                      <article key={obj.id}>
+                    <Col className="gutter-row" xs={12} md={6} key={obj.id}>
+                      <article >
                         {
-                          obj.attributes.coverImage?.small 
+                          obj.attributes.posterImage?.small 
                           ?
-                          <Image src={obj.attributes.coverImage?.small}
-                            width="384"
-                            height="91"
+                          <Image src={obj.attributes.posterImage?.small}
+                            width="284"
+                            height="402"
                             alt="teste" />
                           :
-                          <CustomPlaceholder width={384} height={91} backgroundColor="#123456" textColor="#ffffff" text="Imagem indisponivel =("/>
+                          <CustomPlaceholder width={284} height={402} backgroundColor="#123456" textColor="#ffffff" text="Imagem indisponivel =("/>
                         }
                         <h2>{obj.attributes.canonicalTitle}</h2>
                       </article>
@@ -98,9 +98,9 @@ export default function Lista({animesList}) {
 
 export async function getServerSideProps() {
 
-  const res = await fetch("https://kitsu.io/api/edge/anime")
+  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=4&page[offset]=0")
   const animes = await res.json()
-  console.log(animes.data[4].attributes);
+  // console.log(animes.data[4].attributes);
 
   return { props: { 
     animesList: animes.data

@@ -1,3 +1,33 @@
+## DEV PLANEJAMENTO
+
+### Levantando esforço (escopo + tempo + conhecimento + curva de aprendizado)
+
+#### Objetivo:
+
+Fazer um catalogo de animes conforme escopo, por falta de dominio nos recursos requeridos planejei fazer uma entrega mais simples que atenda a demanda, no caminho vou anotar *"features"* para pós entrega implementar futuramente como um projeto pessoal.  
+
+#### Tecnologias propóstas:
+
+- React Js              (done)
+- Next Js               (done)
+- Ant.Design            (done)
+- Less Css              (fail) 
+- Vercel (servidor)     (done)
+
+#### Estrutura planejada:
+
+- Pages:
+    - Home (Apenas para introdução do projeto)
+    - Painel exibindo 10 animes conforme utilizado kitsu API lib.
+    - Página trazendo informações somente do anime selecionado.
+    
+```bash
+*/
+Comentários DEV
+Nesse ponto eu planejei utilizar meu esforço em um funcionamento básico da utilização da API e focar mais na parte visual me focando em aprender/utilizar o *Ant design*, nunca utilizei, então priorizei a dominar o melhor possível dela. 
+*/
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -32,3 +62,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+

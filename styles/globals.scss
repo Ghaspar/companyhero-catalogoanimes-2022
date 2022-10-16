@@ -19,10 +19,18 @@ a {
   box-sizing: border-box;
 }
 
-
-
 // cores de texto baseadas na paleta
 .text{
+  &-primary{
+      color: $primary;
+  }
+  &-white{
+      color: white;
+  }
+}
+
+// cores de texto baseadas na paleta
+.bg{
   &-primary{
       color: $primary;
   }

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import MainHeader from "../../components/MainHeader";
 
 function SingleProps() {
 
@@ -7,7 +8,7 @@ function SingleProps() {
 
   return (
     <>
-      <h1>Anime - {slug}</h1>
+      <MainHeader pageTitle={"Company Hero - "+slug} />
       <h2>desc </h2>
     </>
   )

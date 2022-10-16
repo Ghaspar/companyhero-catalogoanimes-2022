@@ -21,12 +21,8 @@ Fazer um catalogo de animes conforme escopo, por falta de dominio nos recursos r
     - Painel exibindo 10 animes conforme utilizado kitsu API lib.
     - Página trazendo informações somente do anime selecionado.
     
-```bash
-*/
 Comentários DEV
 Nesse ponto eu planejei utilizar meu esforço em um funcionamento básico da utilização da API e focar mais na parte visual me focando em aprender/utilizar o *Ant design*, nunca utilizei, então priorizei a dominar o melhor possível dela. 
-*/
-```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

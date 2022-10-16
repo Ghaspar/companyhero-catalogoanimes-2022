@@ -2,50 +2,51 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
 import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
-import { Col, Layout, Row, Typography } from 'antd';
+import { Col, Layout, Row, Typography, Card } from 'antd';
 import React, { useState } from "react";
 import { CustomPlaceholder } from 'react-placeholder-image';
 import MainHeader from "../../components/MainHeader";
+import Meta from 'antd/lib/card/Meta';
 
 
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
 export default function Lista({animesList}) {
-    const [collapsed, setCollapsed] = useState(false);
     return (
       <>
-        <Layout className="layout">
           <Layout className="site-layout">
             <MainHeader />
             <Content
                 className="site-layout-background"
                 id="show-all-animes"
-                col=""
             >
               <Row gutter={[12,12]} justify="center">
                 {
                   animesList.map((obj) => (
-                    <Col className="gutter-row" xs={24} md={12} lg={6} key={obj.id}>
-                      {
-                        obj.attributes.posterImage?.small 
-                        ?
-                        <Image src={obj.attributes.posterImage?.small}
-                          width="284"
-                          height="402"
-                          alt="teste" />
-                        :
-                        <CustomPlaceholder width={284} height={402} backgroundColor="#123456" textColor="#ffffff" text="Imagem indisponivel =("/>
-                      }
-                      <Title level={2}>{obj.attributes.canonicalTitle}</Title>
+                    <Col className="gutter-row" align="middle" xs={24} md={12} lg={6} key={obj.id}>
+                      <Card
+                        hoverable
+                        className="anime-post text-white"
+                        cover={
+                          obj.attributes.posterImage?.small 
+                          ?
+                          <Image src={obj.attributes.posterImage?.small}
+                            width="284"
+                            height="402"
+                            alt="teste" />
+                          :
+                          <CustomPlaceholder width={284} height={402} backgroundColor="#123456" textColor="#ffffff" text="Imagem indisponivel =("/>
+                        }
+                        >
+                        <Meta title={obj.attributes.canonicalTitle} />
+                      </Card>
                     </Col>
                   ))
                 }
               </Row>
             </Content>
           </Layout>
-        </Layout>
-
       </>
     )
 }

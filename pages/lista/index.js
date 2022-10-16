@@ -11,19 +11,24 @@ import { useRouter } from 'next/router';
 const { Content } = Layout;
 
 async function loadAnimes(page){
-
-  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=8&page[offset]="+(page*8));
-  const animes = await res.json();
-  console.log(animes.data);
-  return animes.data;
+  try {
+    const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=8&page[offset]="+(page*8));
+    const animes = await res.json();
+    console.log(res.status);
+    return animes.data;
+  } catch (error) {
+    
+    return false;
+  }
+ 
 }
 
 export default function Lista({animesList}) {
     const router = useRouter();
-    const [pagnation, setPagnation] = useState(1);
+    const [pagnation, setPagnation] = useState(0);
     const onChange = async (page) => {
       setPagnation(page);
-      router.replace(`lista?page=${page}`);
+      router.replace(`lista?page=${page-1}`);
     };
     return (
       <>
@@ -32,7 +37,7 @@ export default function Lista({animesList}) {
             <Content
               className="bg-primary-secondary"
             >
-              <Pagination current={pagnation} onChange={onChange} total={12062} />
+              <Pagination className="pagnation-custom" current={pagnation} onChange={onChange} total={12062} />
               <Row className="content-cards" justify="center">
                 {
                   animesList.map((obj) => (
@@ -72,6 +77,14 @@ export async function getServerSideProps(res) {
   const curretPage = (res.query.page ? res.query.page: 0);
   const animes = await loadAnimes(curretPage)
 
+  if (!animes) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
   return { props: { 
     animesList: animes
    } 

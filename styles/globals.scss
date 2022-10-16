@@ -48,6 +48,17 @@ a {
   }
 }
 
+.pagnation-custom{
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 2px solid $secondary;
+  outline: none;
+  max-width: 520px;
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
 .content-cards{
   padding: 1rem 0;
   overflow: hidden;

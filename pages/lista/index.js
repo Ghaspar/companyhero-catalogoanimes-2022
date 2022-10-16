@@ -31,8 +31,8 @@ export default function Lista({animesList}) {
     };
     return (
       <>
+          <MainHeader pageTitle="Company Hero - Catalogo de animes!" />
           <Layout className="site-layout">
-            <MainHeader />
             <Content
               className="bg-primary-secondary"
             >

@@ -4,11 +4,11 @@ import styles from './style.module.scss'
 
 const { Title } = Typography;
 
-export default function MainHeader() {
+export default function MainHeader({pageTitle}) {
     return (
       <>
         <Layout className={styles.mainTitle}>
-            <Title align="middle" className="text-primary">Company Hero - Catalogo de animes!</Title>
+            <Title align="middle" className="text-primary">{pageTitle}</Title>
         </Layout>
       </>
     )

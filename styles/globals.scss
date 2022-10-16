@@ -39,18 +39,24 @@ a {
   }
   &-secondary{
     background-color: $secondary;
-}
+  }
   &-white{
     background-color: white;
+  }
+  &-primary-secondary{
+    background: linear-gradient(32deg, rgba(255,0,102,1) 0%, rgba(133,77,99,1) 24%, rgba(133,77,99,1) 64%, rgba(255,0,102,1) 100%);
   }
 }
 
 .content-cards{
   padding: 1rem 0;
+  overflow: hidden;
 }
 
 .anime-post{
-  background-color: #ffe5ef
+  background-color: #ffe5ef;
+  max-width: 280px;
+  margin: 1rem;
 }
 
 .trigger {
@@ -73,10 +79,6 @@ a {
   justify-content: center;
   align-items: center;
   color: #fff;
-}
-
-.site-layout .site-layout-background {
-  background: #fff;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,6 +1,7 @@
 import 'antd/dist/antd.css'
 import { Layout } from 'antd'
 import '../styles/globals.scss'
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
 
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
     <Layout className="layout">
       <Component {...pageProps} />
     </Layout>
+    <Footer />
     </>
   )
     

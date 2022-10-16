@@ -2,7 +2,6 @@ import Head from 'next/head'
 import "antd/dist/antd.css";
 import Banner from '../components/Banner';
 import MainHeader from '../components/MainHeader';
-import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       </Head>
       <MainHeader />
       <Banner />
-      <Footer />
       
     </>
   )

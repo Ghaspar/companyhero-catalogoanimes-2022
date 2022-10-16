@@ -15,12 +15,12 @@ export default function Lista({animesList}) {
           <Layout className="site-layout">
             <MainHeader />
             <Content
-                className="site-layout-background"
+              className="bg-secondary"
             >
-              <Row className="content-cards bg-secondary" gutter={[12,12]} justify="center">
+              <Row className="content-cards" justify="center">
                 {
                   animesList.map((obj) => (
-                    <Col className="gutter-row" align="middle" xs={24} md={12} lg={4} key={obj.id}>
+                    <Col align="middle" xs={12} md={8} lg={5} xl={5} key={obj.id}>
                       <Link href={"/lista/"+obj.attributes.slug}>
                         <Card
                           hoverable
@@ -39,8 +39,8 @@ export default function Lista({animesList}) {
                           <Meta title={obj.attributes.canonicalTitle} />
                         </Card>
                       </Link>
-                      
                     </Col>
+                    
                   ))
                 }
               </Row>
@@ -53,7 +53,7 @@ export default function Lista({animesList}) {
 
 export async function getServerSideProps() {
 
-  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0")
+  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=8&page[offset]=0")
   const animes = await res.json()
   console.log(animes.data[2]);
 

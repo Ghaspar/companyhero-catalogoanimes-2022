@@ -47,10 +47,13 @@ a {
 
 .content-cards{
   padding: 1rem 0;
+  overflow: hidden;
 }
 
 .anime-post{
-  background-color: #ffe5ef
+  background-color: #ffe5ef;
+  max-width: 280px;
+  margin: 1rem;
 }
 
 .trigger {
@@ -73,10 +76,6 @@ a {
   justify-content: center;
   align-items: center;
   color: #fff;
-}
-
-.site-layout .site-layout-background {
-  background: #fff;
 }
 
 @media (prefers-color-scheme: dark) {

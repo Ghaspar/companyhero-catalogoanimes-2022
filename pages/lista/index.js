@@ -14,7 +14,6 @@ async function loadAnimes(page){
   try {
     const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=8&page[offset]="+(page*8));
     const animes = await res.json();
-    console.log(res.status);
     return animes.data;
   } catch (error) {
     
@@ -25,7 +24,7 @@ async function loadAnimes(page){
 
 export default function Lista({animesList}) {
     const router = useRouter();
-    const [pagnation, setPagnation] = useState(0);
+    const [pagnation, setPagnation] = useState(1);
     const onChange = async (page) => {
       setPagnation(page);
       router.replace(`lista?page=${page-1}`);

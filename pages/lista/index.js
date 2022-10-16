@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
-import { Col, Layout, Menu, Row, Typography } from 'antd';
-import React, { useEffect, useState } from "react";
 import Link from 'next/link';
+import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
+import { Col, Layout, Row, Typography } from 'antd';
+import React, { useState } from "react";
 import { CustomPlaceholder } from 'react-placeholder-image';
+import MainHeader from "../../components/MainHeader";
 
-const { Header, Sider, Content } = Layout;
+
+const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
 export default function Lista({animesList}) {
@@ -15,31 +17,27 @@ export default function Lista({animesList}) {
       <>
         <Layout className="layout">
           <Layout className="site-layout">
-            <Header className="site-layout-background">
-              <Title>Company Hero - Catalogo de animes!</Title>
-            </Header>
+            <MainHeader />
             <Content
                 className="site-layout-background"
                 id="show-all-animes"
                 col=""
             >
-              <Row gutter={[12,12]}>
+              <Row gutter={[12,12]} justify="center">
                 {
                   animesList.map((obj) => (
                     <Col className="gutter-row" xs={24} md={12} lg={6} key={obj.id}>
-                      <article >
-                        {
-                          obj.attributes.posterImage?.small 
-                          ?
-                          <Image src={obj.attributes.posterImage?.small}
-                            width="284"
-                            height="402"
-                            alt="teste" />
-                          :
-                          <CustomPlaceholder width={284} height={402} backgroundColor="#123456" textColor="#ffffff" text="Imagem indisponivel =("/>
-                        }
-                        <Title level={2}>{obj.attributes.canonicalTitle}</Title>
-                      </article>
+                      {
+                        obj.attributes.posterImage?.small 
+                        ?
+                        <Image src={obj.attributes.posterImage?.small}
+                          width="284"
+                          height="402"
+                          alt="teste" />
+                        :
+                        <CustomPlaceholder width={284} height={402} backgroundColor="#123456" textColor="#ffffff" text="Imagem indisponivel =("/>
+                      }
+                      <Title level={2}>{obj.attributes.canonicalTitle}</Title>
                     </Col>
                   ))
                 }

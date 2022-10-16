@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
-import { Button, DatePicker, Space, version } from "antd";
 import "antd/dist/antd.css";
 import Banner from '../components/Banner';
 import MainHeader from '../components/MainHeader';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -15,12 +14,8 @@ export default function Home() {
       </Head>
       <MainHeader />
       <Banner />
-       
-      <footer className={styles.footer}>
-        <small>
-          Lucas Gaspar Firmino
-        </small>
-      </footer>
+      <Footer />
+      
     </>
   )
 }

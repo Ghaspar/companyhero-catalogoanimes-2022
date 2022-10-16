@@ -24,6 +24,9 @@ a {
   &-primary{
       color: $primary;
   }
+  &-secondary{
+      color: $secondary;
+  }
   &-white{
       color: white;
   }
@@ -32,10 +35,13 @@ a {
 // cores de texto baseadas na paleta
 .bg{
   &-primary{
-      color: $primary;
+    background-color: $primary;
   }
+  &-secondary{
+    background-color: $secondary;
+}
   &-white{
-      color: white;
+    background-color: white;
   }
 }
 

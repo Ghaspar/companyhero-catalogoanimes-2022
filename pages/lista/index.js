@@ -15,7 +15,7 @@ export default function Lista({animesList}) {
           <Layout className="site-layout">
             <MainHeader />
             <Content
-              className="bg-secondary"
+              className="bg-primary-secondary"
             >
               <Row className="content-cards" justify="center">
                 {

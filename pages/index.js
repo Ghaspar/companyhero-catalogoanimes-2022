@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { Button, DatePicker, Space, version } from "antd";
 import "antd/dist/antd.css";
-import Link from 'next/link';
 import Banner from '../components/Banner';
 import MainHeader from '../components/MainHeader';
 

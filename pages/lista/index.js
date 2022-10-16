@@ -1,15 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
 import { Col, Layout, Row, Typography, Card } from 'antd';
 import React, { useState } from "react";
 import { CustomPlaceholder } from 'react-placeholder-image';
 import MainHeader from "../../components/MainHeader";
 import Meta from 'antd/lib/card/Meta';
 
-
 const { Content } = Layout;
-const { Title, Paragraph, Text } = Typography;
 
 export default function Lista({animesList}) {
     return (
@@ -23,7 +20,7 @@ export default function Lista({animesList}) {
               <Row gutter={[12,12]} justify="center">
                 {
                   animesList.map((obj) => (
-                    <Col className="gutter-row" align="middle" xs={24} md={12} lg={6} key={obj.id}>
+                    <Col className="gutter-row" align="middle" xs={24} md={12} lg={4} key={obj.id}>
                       <Card
                         hoverable
                         className="anime-post text-white"
@@ -53,7 +50,7 @@ export default function Lista({animesList}) {
 
 export async function getServerSideProps() {
 
-  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=4&page[offset]=0")
+  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0")
   const animes = await res.json()
   console.log(animes.data[2]);
 

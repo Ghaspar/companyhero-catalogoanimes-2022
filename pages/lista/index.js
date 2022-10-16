@@ -1,15 +1,30 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Col, Layout, Row, Typography, Card } from 'antd';
-import React, { useState } from "react";
+import { Col, Layout, Row, Card, Pagination } from 'antd';
+import React, { useEffect, useState } from "react";
 import { CustomPlaceholder } from 'react-placeholder-image';
 import MainHeader from "../../components/MainHeader";
 import Meta from 'antd/lib/card/Meta';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const { Content } = Layout;
 
+async function loadAnimes(page){
+
+  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=8&page[offset]="+(page*8));
+  const animes = await res.json();
+  console.log(animes.data);
+  return animes.data;
+}
+
 export default function Lista({animesList}) {
+    const router = useRouter();
+    const [pagnation, setPagnation] = useState(1);
+    const onChange = async (page) => {
+      setPagnation(page);
+      router.replace(`lista?page=${page}`);
+    };
     return (
       <>
           <Layout className="site-layout">
@@ -17,6 +32,7 @@ export default function Lista({animesList}) {
             <Content
               className="bg-primary-secondary"
             >
+              <Pagination current={pagnation} onChange={onChange} total={12062} />
               <Row className="content-cards" justify="center">
                 {
                   animesList.map((obj) => (
@@ -51,15 +67,14 @@ export default function Lista({animesList}) {
 }
   
 
-export async function getServerSideProps() {
+export async function getServerSideProps(res) {
 
-  const res = await fetch("https://kitsu.io/api/edge/anime?page[limit]=8&page[offset]=0")
-  const animes = await res.json()
-  console.log(animes.data[2]);
+  const curretPage = (res.query.page ? res.query.page: 0);
+  const animes = await loadAnimes(curretPage)
 
   return { props: { 
-    animesList: animes.data
+    animesList: animes
    } 
   }
 }
-  
+

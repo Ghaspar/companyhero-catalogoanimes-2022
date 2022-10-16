@@ -45,6 +45,10 @@ a {
   }
 }
 
+.content-cards{
+  padding: 1rem 0;
+}
+
 .anime-post{
   background-color: #ffe5ef
 }
@@ -73,10 +77,6 @@ a {
 
 .site-layout .site-layout-background {
   background: #fff;
-}
-
-#show-all-animes{
-  margin: 24px 16px;
 }
 
 @media (prefers-color-scheme: dark) {

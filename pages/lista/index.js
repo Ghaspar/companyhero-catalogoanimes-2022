@@ -41,7 +41,7 @@ export default function Lista({animesList}) {
                 {
                   animesList.map((obj) => (
                     <Col align="middle" xs={12} md={8} lg={5} xl={5} key={obj.id}>
-                      <Link href={"/lista/"+obj.attributes.slug}>
+                      <Link href={"/lista/anime/"+obj.attributes.slug+"/"+obj.id}>
                         <Card
                           hoverable
                           className="anime-post text-white"

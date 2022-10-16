@@ -26,6 +26,15 @@ Nesse ponto eu planejei utilizar meu esforço em um funcionamento básico da uti
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+#### Features planejadas
+
+- Breadcrumbs component
+- Filtro por categorias
+- URL (catalogo/$categoy/$slug/$id)
+- utilizar '/utils' para as requisições na API
+- Melhorar layout de single page anime
+
 ## Getting Started
 
 First, run the development server:

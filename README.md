@@ -18,13 +18,17 @@ Fazer um catalogo de animes conforme escopo, por falta de dominio nos recursos r
 
 - Pages:
     - Home (Apenas para introdução do projeto)
-    - Painel exibindo 10 animes conforme utilizado kitsu API lib.
+    - Painel exibindo 8 animes conforme utilizado kitsu API lib.
     - Página trazendo informações somente do anime selecionado.
     
 Comentários DEV
 Nesse ponto eu planejei utilizar meu esforço em um funcionamento básico da utilização da API e focar mais na parte visual me focando em aprender/utilizar o *Ant design*, nunca utilizei, então priorizei a dominar o melhor possível dela. 
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#### Estratégia de SEO utilizada.
+
+Foi implementado na _app.js um 'head' com conteúdo default, assim garantindo que todas as páginas vão ter o básico em metas para o buscador google, criado o componente 'mainHeader' para cada página conter seu h1 próprio garantindo um lugar no rank do google para cada página, alem disso também foi implementado a lib de 'next-seo' para cada página ter suas metas especificas sobre o conteúdo exibido pela mesma.  
+
+Incluido sitemap e robots básicos só para ilustrar como eu lidaria com um projeto real nessa parte de performar em SEO.
 
 
 #### Features planejadas
@@ -32,8 +36,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Breadcrumbs component
 - Filtro por categorias
 - URL (catalogo/$categoy/$slug/$id)
+- melhorar componentização de estrutura deixar mais leve
 - utilizar '/utils' para as requisições na API
 - Melhorar layout de single page anime
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 

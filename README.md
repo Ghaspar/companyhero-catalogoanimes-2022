@@ -33,7 +33,6 @@ Incluido sitemap e robots básicos só para ilustrar como eu lidaria com um proj
 
 #### Features planejadas
 
-- Breadcrumbs component
 - Filtro por categorias
 - URL (catalogo/$categoy/$slug/$id)
 - melhorar componentização de estrutura deixar mais leve

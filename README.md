@@ -21,9 +21,6 @@ Fazer um catalogo de animes conforme escopo, por falta de dominio nos recursos r
     - Painel exibindo 8 animes conforme utilizado kitsu API lib.
     - Página trazendo informações somente do anime selecionado.
     
-Comentários DEV
-Nesse ponto eu planejei utilizar meu esforço em um funcionamento básico da utilização da API e focar mais na parte visual me focando em aprender/utilizar o *Ant design*, nunca utilizei, então priorizei a dominar o melhor possível dela. 
-
 #### Estratégia de SEO utilizada.
 
 Foi implementado na _app.js um 'head' com conteúdo default, assim garantindo que todas as páginas vão ter o básico em metas para o buscador google, criado o componente 'mainHeader' para cada página conter seu h1 próprio garantindo um lugar no rank do google para cada página, alem disso também foi implementado a lib de 'next-seo' para cada página ter suas metas especificas sobre o conteúdo exibido pela mesma.  
@@ -37,7 +34,18 @@ Incluido sitemap e robots básicos só para ilustrar como eu lidaria com um proj
 - URL (catalogo/$categoy/$slug/$id)
 - melhorar componentização de estrutura deixar mais leve
 - utilizar '/utils' para as requisições na API
-- Melhorar layout de single page anime
+- Melhorar layout
+
+# Considerações de entrega
+
+Foi um projeto um tanto desafiador pra mim, pois tirando o react/nextjs, eu nunca tinha usado o ant design e o vercel, mas no fim acabei me virando muito bem, na estilização optei por utilizar o sass, o ideal era alterar para less para manipular melhor o ant design, porem ali deu uns erros no processo de conversão, então pra não empacar eu utilizei o sass que é práticamente igual o less então nesse ponto não consegui demostrar minha dominação nele mas não tenho problema algum em estilizar utilizando o less.
+
+Tem pontos que posso ir mais longe no projeto como modular mais componentes, fazer as requisições com a api utilizando o utils, melhorar o layout e adicionar um filtro de categorias, mas me foquei em ser simples e funcional nesse ponto, já que eu teria que aprender e desenvolver dentro da propósta  e prazo levantados.
+
+Espero que gostem, fiz com muito carinho e dedicação, o projeto não para na entrega, no meu tempo livre vou seguir com as features levantadas e levantar mais algumas até eu ficar satisfeito com o projeto. 
+
+Obrigado pela oportunidade!
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

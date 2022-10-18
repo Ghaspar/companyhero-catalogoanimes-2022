@@ -5,7 +5,7 @@ import moment from 'moment';
 import { Col, Typography, Layout, Row, DatePicker} from 'antd';
 import { CustomPlaceholder } from 'react-placeholder-image';
 import YouTube from 'react-youtube';
-import { NextSeo, CarouselJsonLd } from "next-seo";
+import { NextSeo } from "next-seo";
 import BreadCrumb from "../../../components/BreadCrumb";
 
 const { Content } = Layout;
@@ -17,7 +17,6 @@ async function loadSingleAnime(page){
   try {
     const res = await fetch("https://kitsu.io/api/edge/anime/"+page);
     const animes = await res.json();
-    console.log(animes.data);
     return animes.data;
   } catch (error) {
     

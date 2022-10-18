@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import "antd/dist/antd.css";
 import Banner from '../components/Banner';
 import MainHeader from '../components/MainHeader';

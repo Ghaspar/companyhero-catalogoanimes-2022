@@ -5,6 +5,7 @@ import moment from 'moment';
 import { Col, Typography, Layout, Row, DatePicker} from 'antd';
 import { CustomPlaceholder } from 'react-placeholder-image';
 import YouTube from 'react-youtube';
+import { NextSeo, CarouselJsonLd } from "next-seo";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -39,6 +40,26 @@ export default function Anime({animeInfos}) {
 
   return (
     <>
+      <NextSeo
+        title={"Company Hero - "+(animeInfos.attributes.canonicalTitle ? animeInfos.attributes.canonicalTitle : animeInfos.attributes.titles.en)}
+        description={animeInfos.attributes.description.substring(0, 250)}
+        canonical={"https://www.canonical.ie"+router.asPath}
+        openGraph={{
+          url: "https://www.canonical.ie"+router.asPath,
+          title: "Company Hero - "+(animeInfos.attributes.canonicalTitle ? animeInfos.attributes.canonicalTitle : animeInfos.attributes.titles.en),
+          description: animeInfos.attributes.description.substring(0, 250),
+          images: [
+            {
+              url: animeInfos.attributes.posterImage?.original,
+              width: 800,
+              height: 600,
+              alt: 'Animes banner',
+              type: 'image/webp',
+            }
+          ],
+          site_name: "Company Hero - "+(animeInfos.attributes.canonicalTitle ? animeInfos.attributes.canonicalTitle : animeInfos.attributes.titles.en),
+        }}
+      />
       <MainHeader pageTitle={"Company Hero - "+(animeInfos.attributes.canonicalTitle ? animeInfos.attributes.canonicalTitle : animeInfos.attributes.titles.en)} />
       <Layout align="middle">
         <Row justify="center" className="bg-primary-secondary">

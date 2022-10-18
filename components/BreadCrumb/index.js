@@ -1,18 +1,23 @@
 import { Breadcrumb } from 'antd';
 import styles from './style.module.scss'
 
-export default function BreadCrumb() {
+export default function BreadCrumb({link, current}) {
     return (
       <>
         <Breadcrumb className={styles.breadcrumb}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>
-            <a href="">Application Center</a>
+                <a href="/">Home</a> 
             </Breadcrumb.Item>
             <Breadcrumb.Item>
-            <a href="">Application List</a>
+                <a href="/lista">Lista</a> 
             </Breadcrumb.Item>
-            <Breadcrumb.Item>An Application</Breadcrumb.Item>
+            {
+                link && current && 
+                <Breadcrumb.Item>
+                    <a href={link}>{current}</a> 
+                </Breadcrumb.Item>
+            }
+            
         </Breadcrumb>
       </>
     )

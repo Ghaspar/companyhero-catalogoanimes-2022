@@ -7,6 +7,7 @@ import Meta from 'antd/lib/card/Meta';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
+import BreadCrumb from '../../components/BreadCrumb';
 
 const { Content } = Layout;
 
@@ -52,6 +53,7 @@ export default function Lista({animesList}) {
           }}
         />
           <MainHeader pageTitle="Company Hero - Catalogo de animes!" />
+          <BreadCrumb link={router.asPath} current=""/>
           <Layout className="site-layout">
             <Content
               className="bg-primary-secondary"

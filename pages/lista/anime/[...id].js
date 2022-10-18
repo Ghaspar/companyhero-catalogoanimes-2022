@@ -6,6 +6,7 @@ import { Col, Typography, Layout, Row, DatePicker} from 'antd';
 import { CustomPlaceholder } from 'react-placeholder-image';
 import YouTube from 'react-youtube';
 import { NextSeo, CarouselJsonLd } from "next-seo";
+import BreadCrumb from "../../../components/BreadCrumb";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -61,6 +62,7 @@ export default function Anime({animeInfos}) {
         }}
       />
       <MainHeader pageTitle={"Company Hero - "+(animeInfos.attributes.canonicalTitle ? animeInfos.attributes.canonicalTitle : animeInfos.attributes.titles.en)} />
+      <BreadCrumb link={router.asPath} current={animeInfos.attributes.slug}/>
       <Layout align="middle">
         <Row justify="center" className="bg-primary-secondary">
           <Col xs={24} md={24} lg={12} xl={12} >

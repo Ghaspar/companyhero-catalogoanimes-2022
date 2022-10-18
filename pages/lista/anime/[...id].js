@@ -5,7 +5,8 @@ import moment from 'moment';
 import { Col, Typography, Layout, Row, DatePicker} from 'antd';
 import { CustomPlaceholder } from 'react-placeholder-image';
 import YouTube from 'react-youtube';
-import { NextSeo, CarouselJsonLd } from "next-seo";
+import { NextSeo } from "next-seo";
+import BreadCrumb from "../../../components/BreadCrumb";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -16,7 +17,6 @@ async function loadSingleAnime(page){
   try {
     const res = await fetch("https://kitsu.io/api/edge/anime/"+page);
     const animes = await res.json();
-    console.log(animes.data);
     return animes.data;
   } catch (error) {
     
@@ -61,6 +61,7 @@ export default function Anime({animeInfos}) {
         }}
       />
       <MainHeader pageTitle={"Company Hero - "+(animeInfos.attributes.canonicalTitle ? animeInfos.attributes.canonicalTitle : animeInfos.attributes.titles.en)} />
+      <BreadCrumb link={router.asPath} current={animeInfos.attributes.slug}/>
       <Layout align="middle">
         <Row justify="center" className="bg-primary-secondary">
           <Col xs={24} md={24} lg={12} xl={12} >

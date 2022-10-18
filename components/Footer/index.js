@@ -1,4 +1,3 @@
-import React from "react";
 import { Layout, Typography } from 'antd';
 import styles from './style.module.scss'
 import Link from 'next/link';
@@ -13,8 +12,8 @@ export default function Banner() {
       <Layout className={styles.footerContent+" bg-primary-secondary"}>
         <Footer align="middle" className={styles.footer}>
             <Text className="text-white">Lucas Gaspar Firmino</Text>
-            <Link href="#">
-                <a className="text-white">Visit this on Github! <GithubOutlined /></a>
+            <Link href="https://github.com/Ghaspar/companyhero-catalogoanimes-2022/tree/main">
+                <a className="text-white" target="_blank">Visit this on Github! <GithubOutlined /></a>
             </Link>
         </Footer>
       </Layout>

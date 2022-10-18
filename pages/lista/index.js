@@ -1,12 +1,12 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import { Col, Layout, Row, Card, Pagination } from 'antd';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CustomPlaceholder } from 'react-placeholder-image';
 import MainHeader from "../../components/MainHeader";
 import Meta from 'antd/lib/card/Meta';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 
 const { Content } = Layout;
 
@@ -31,6 +31,26 @@ export default function Lista({animesList}) {
     };
     return (
       <>
+        <NextSeo
+          title="Company Hero - Projeto de catalogo de animes!"
+          description="Projeto de catalogo de animes, objetivo de desafiar a utilização de novas ferramentas e adição a portifólio pessoal"
+          canonical="https://www.canonical.ie/"
+          openGraph={{
+            url: 'https://www.url.ie/a',
+            title: 'Company Hero - Projeto de catalogo de animes!',
+            description: 'Projeto de catalogo de animes, objetivo de desafiar a utilização de novas ferramentas e adição a portifólio pessoal',
+            images: [
+              {
+                url: '/banner.webp',
+                width: 800,
+                height: 600,
+                alt: 'Animes banner',
+                type: 'image/webp',
+              }
+            ],
+            site_name: 'Company Hero - Projeto de catalogo de animes!',
+          }}
+        />
           <MainHeader pageTitle="Company Hero - Catalogo de animes!" />
           <Layout className="site-layout">
             <Content

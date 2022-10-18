@@ -70,7 +70,7 @@ export default function Anime({animeInfos}) {
               ?
               <YouTube className="videoWrapper" videoId={animeInfos.attributes?.youtubeVideoId} opts={opts} />
               :
-              <CustomPlaceholder width={600} height={300} backgroundColor="#f06" textColor="#ffffff" text="Video indisponivel =("/>
+              <CustomPlaceholder className="img-responsive" width={600} height={300} backgroundColor="#f06" textColor="#ffffff" text="Video indisponivel =("/>
             }
           </Col>
         </Row>
